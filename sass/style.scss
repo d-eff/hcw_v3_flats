@@ -1,19 +1,19 @@
 $primary: #000;
 $primary_dark: gray;
 $primary_light: lightgray;
+$BLOOD: red;
 
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 @import 'reset';
 @import 'breakpoint';
 
 html {
-    font-size:16px;
-    font-family:'Lato', sans-serif;
-    font-weight:normal;
+    font-size:20px;
 }
 
 body {
-  background-color:#282828;
+  font-family:'Lato', sans-serif;
+  font-weight:normal;
 }
 
 .page--content-wrap {
@@ -53,10 +53,12 @@ body {
   }
   @include breakpoint(800){
     position:relative;
-    text-align:right;
     li{
       display:inline;
       font-size:0px;
+    }
+    ul li:first-child {
+      display:none;
     }
     & ul[data-state=closed]{
       height:inherit;
@@ -85,26 +87,100 @@ body {
 }
 
 .page--site-subtitle {
+  margin:0 0 2rem;
   font-size:1rem;
   font-style:italic;
 }
 
 
 .blurb--wrap {
-  margin:1.2rem auto;
+  margin:2rem auto;
   font-size:1.25rem;
   max-width:500px;
   @include breakpoint(600){
    text-align:center;
   }
 }
-
-.cta--wrap {
-  text-align:center;
+/*COME UP WITH MORE SEMANTIC NAME*/
+.cta--wrap-wrap {
+  width:100%;
 }
-.cta--button {
-  padding:0.5rem 1rem;
-  font-size:1.5rem;
+.cta--wrap {
+  margin:2rem auto;
+  text-align:center;
+  @include breakpoint(800){
+    padding:1rem 0;
+    border-top:1px solid #000;
+  }
+}
+
+.cta--left {
+  display:inline-block;
+  vertical-align:top;
+  h3 {
+    font-size:2rem;
+  }
+  @include breakpoint(800){
+  margin:0 1rem 0 0;
+  text-align:right;
+    width:25%;
+  }
+}
+.cta--right {
+  img {
+    border-radius:50%;
+  
+    @include breakpoint(800){
+      float:left;
+      margin:0 01rem 0 1rem;
+    }
+  }
+  h3 {
+    font-size:1rem;
+    @include breakpoint(800){
+      display:inline-block;
+      margin:0 0 1rem;
+    
+    }
+  }
+  p {
+    margin:0.5rem 0;
+  }
+  @include breakpoint(800){
+  text-align:left;
+    display:inline-block;
+    
+    border-left:1px solid #000;
+    width:70%;
+  }
+}
+
+.cta--email-form {
+  input[type=email]{
+    width:50%;
+    height:2rem;
+    @include breakpoint(800){
+      float:left;
+    }
+  }
+  label {
+    position:absolute;
+    left:-9999px;
+    height:0px;
+  }
+
+  button {
+    padding:0.4rem 0.4rem;
+  
+    background:none;
+    box-shadow:none;
+    border:1px solid #000;
+    font-size:1rem;
+    @include breakpoint(800){
+      float:left;
+    }
+
+  }
 }
 
 .homepage--content-wrap {
