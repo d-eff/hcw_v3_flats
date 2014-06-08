@@ -34,6 +34,7 @@ body {
   background-color:white;
   text-align:center;
   overflow:hidden;
+  -webkit-transition: 1s -webkit-transform linear;
   ul {
     -webkit-transition:1s height linear;
   }
@@ -45,14 +46,22 @@ body {
     padding:0.5rem 2rem;
     font-size:1rem;
   }
+  &[data-state=normal]{
+    position:absolute;
+  }
+  &[data-state=fixed]{
+    position:fixed;
+  }
   & ul[data-state=closed]{
     height:0;
   }
   & ul[data-state=open]{
-    height:100px;
+    height:initial;
   }
   @include breakpoint(800){
-    position:relative;
+    &[data-state=normal]{
+      position:relative;
+    }
     li{
       display:inline;
       font-size:0px;
@@ -213,9 +222,6 @@ body {
 .offer--left {
   display:inline-block;
   vertical-align:top;
-  h3 {
-    font-size:1.5rem;
-  }
   @include breakpoint(800){
   margin:0 1.5rem 0 0;
   text-align:right;
@@ -234,7 +240,6 @@ body {
   }
   h3 {
     font-size:1.25rem;
-    font-weight:bold;
     @include breakpoint(800){
       display:inline-block;
       margin:0 0 1rem;
