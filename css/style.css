@@ -50,33 +50,47 @@ body {
 .page--content-wrap {
   background-color: white;
   max-width: 1024px;
-  padding: 0 0.8rem;
+  padding: 1rem 0.8rem;
   margin: 0 auto; }
   @media (min-width: 800px) {
     .page--content-wrap {
-      padding: 0 2rem; } }
+      padding: 1rem 2rem; } }
 
 .page--main-nav {
+  position: absolute;
+  top: 0;
   margin: 0 0 1rem;
-  text-align: center; }
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  overflow: hidden; }
+  .page--main-nav ul {
+    -webkit-transition: 1s height linear; }
   .page--main-nav li {
     list-style: none; }
+  .page--main-nav a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem; }
+  .page--main-nav ul[data-state=closed] {
+    height: 0; }
+  .page--main-nav ul[data-state=open] {
+    height: 100px; }
   @media (min-width: 800px) {
     .page--main-nav {
+      position: relative;
       text-align: right; }
       .page--main-nav li {
         display: inline;
-        font-size: 0px; } }
-
-.page--main-nav-link {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  font-size: 1rem; }
+        font-size: 0px; }
+      .page--main-nav ul[data-state=closed] {
+        height: inherit; } }
 
 .page--site-header {
   text-align: center; }
 
 .page--burger {
+  display: block;
   font-size: 1.5rem;
   text-transform: uppercase;
   text-align: right; }
@@ -85,6 +99,8 @@ body {
       display: none; } }
 
 .page--site-name {
+  clear: both;
+  margin: 1rem 0;
   font-size: 2rem; }
 
 .page--site-subtitle {

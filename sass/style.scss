@@ -19,31 +19,49 @@ body {
 .page--content-wrap {
   background-color:white;
   max-width:1024px;
-  padding:0 0.8rem;
+  padding:1rem 0.8rem;
   margin:0 auto;
   @include breakpoint(800){
-    padding:0 2rem;
+    padding:1rem 2rem;
   }
 }
 
 .page--main-nav {
+  position:absolute;
+  top:0;
   margin:0 0 1rem;
+  width:100%;
+  background-color:white;
   text-align:center;
+  overflow:hidden;
+  ul {
+    -webkit-transition:1s height linear;
+  }
   li {
     list-style:none;
   }
+  a { 
+    display:inline-block;
+    padding:0.5rem 1rem;
+    font-size:1rem;
+  }
+  & ul[data-state=closed]{
+    height:0;
+  }
+  & ul[data-state=open]{
+    height:100px;
+  }
   @include breakpoint(800){
+    position:relative;
     text-align:right;
     li{
       display:inline;
       font-size:0px;
     }
+    & ul[data-state=closed]{
+      height:inherit;
+    }
   }
-}
-.page--main-nav-link {
-  display:inline-block;
-  padding:0.5rem 1rem;
-  font-size:1rem;
 }
 
 .page--site-header {
@@ -51,6 +69,7 @@ body {
 }
 
 .page--burger {
+  display:block;
   font-size:1.5rem;
   text-transform:uppercase;
   text-align:right;
@@ -60,6 +79,8 @@ body {
 }
 
 .page--site-name {
+  clear:both;
+  margin:1rem 0;
   font-size:2rem;
 }
 
