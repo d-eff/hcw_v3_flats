@@ -1,4 +1,3 @@
-(function(){
   var burger = document.querySelector('.page--burger');
 
   function toggleState(item, stateOne, stateTwo){
@@ -30,16 +29,20 @@
       headerBottom = header.offsetTop + header.offsetHeight,
       nav = document.querySelector('.page--main-nav');
 
-  window.addEventListener('scroll', function(){
-    console.log(currentHeight + " " + headerBottom);
+  window.addEventListener('scroll', scrollUlate);
+
+  function scrollUlate(){
+    console.log("SCROLLULATE!");
     var currState = nav.getAttribute('data-state');
     if(currentHeight <= headerBottom){
       if(currState !== 'normal'){
         nav.setAttribute('data-state', 'normal');
+        header.style.margin = "0";
       }
     } else {
       if(currState !== 'fixed'){
         nav.setAttribute('data-state', 'fixed');
+        header.style.margin = "0 0 120px 0";
       }
       if(window.pageYOffset < currentHeight){
         nav.style.webkitTransform = 'translateY(0px)';
@@ -48,6 +51,5 @@
       }
     }
     currentHeight = window.pageYOffset;
-  });
+  }
 
-})()
