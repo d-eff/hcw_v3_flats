@@ -69,7 +69,7 @@ body {
     list-style: none; }
   .page--main-nav a {
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 2rem;
     font-size: 1rem; }
   .page--main-nav ul[data-state=closed] {
     height: 0; }
@@ -102,6 +102,9 @@ body {
   clear: both;
   margin: 1rem 0;
   font-size: 2rem; }
+  @media (min-width: 800px) {
+    .page--site-name {
+      font-size: 2.5rem; } }
 
 .page--site-subtitle {
   margin: 0 0 2rem;
@@ -109,33 +112,36 @@ body {
   font-style: italic; }
 
 .blurb--wrap {
-  margin: 2rem auto;
+  margin: 2rem auto 3rem;
   font-size: 1.25rem;
-  max-width: 500px; }
+  max-width: 700px; }
+  .blurb--wrap p {
+    line-height: 1.2; }
   @media (min-width: 600px) {
     .blurb--wrap {
-      text-align: center; } }
+      text-align: center;
+      font-size: 1.5rem; } }
 
 /*COME UP WITH MORE SEMANTIC NAME*/
 .cta--wrap-wrap {
   width: 100%; }
 
 .cta--wrap {
-  margin: 2rem auto;
+  margin: 2rem auto 2rem;
   text-align: center; }
   @media (min-width: 800px) {
     .cta--wrap {
-      padding: 1rem 0;
+      padding: 1.5rem 0 0;
       border-top: 1px solid #000; } }
 
 .cta--left {
   display: inline-block;
   vertical-align: top; }
   .cta--left h3 {
-    font-size: 2rem; }
+    font-size: 1.5rem; }
   @media (min-width: 800px) {
     .cta--left {
-      margin: 0 1rem 0 0;
+      margin: 0 1.5rem 0 0;
       text-align: right;
       width: 25%; } }
 
@@ -144,7 +150,7 @@ body {
   @media (min-width: 800px) {
     .cta--right img {
       float: left;
-      margin: 0 1rem 0 1rem; } }
+      margin: 0 1.5rem 0 1.5rem; } }
 .cta--right h3 {
   font-size: 1rem; }
   @media (min-width: 800px) {
@@ -152,7 +158,7 @@ body {
       display: inline-block;
       margin: 0 0 1rem; } }
 .cta--right p {
-  margin: 0.5rem 0; }
+  margin: 0 0 0.5rem; }
 @media (min-width: 800px) {
   .cta--right {
     text-align: left;
@@ -161,24 +167,27 @@ body {
     width: 70%; } }
 
 .cta--email-form input[type=email] {
-  width: 50%;
+  width: 90%;
   height: 2rem; }
   @media (min-width: 800px) {
     .cta--email-form input[type=email] {
-      float: left; } }
+      float: left;
+      width: 50%; } }
 .cta--email-form label {
   position: absolute;
   left: -9999px;
   height: 0px; }
 .cta--email-form button {
   padding: 0.4rem 0.4rem;
+  width: 90%;
   background: none;
   box-shadow: none;
   border: 1px solid #000;
   font-size: 1rem; }
   @media (min-width: 800px) {
     .cta--email-form button {
-      float: left; } }
+      float: left;
+      width: 25%; } }
 
 .homepage--content-wrap {
   margin: 1.5rem 0; }
@@ -186,6 +195,43 @@ body {
 .homepage--content-title {
   font-size: 1.25rem;
   font-weight: bold; }
+
+.offer-wrap img {
+  max-width: 100%; }
+
+.offer--left {
+  display: inline-block;
+  vertical-align: top; }
+  .offer--left h3 {
+    font-size: 1.5rem; }
+  @media (min-width: 800px) {
+    .offer--left {
+      margin: 0 1.5rem 0 0;
+      text-align: right;
+      width: 25%; } }
+
+.offer--right img {
+  border-radius: 50%; }
+  @media (min-width: 800px) {
+    .offer--right img {
+      float: left;
+      margin: 0 1.5rem 0 1.5rem; } }
+.offer--right h3 {
+  font-size: 1.25rem;
+  font-weight: bold; }
+  @media (min-width: 800px) {
+    .offer--right h3 {
+      display: inline-block;
+      margin: 0 0 1rem; } }
+.offer--right p {
+  margin: 0 0 0.5rem; }
+.offer--right button {
+  font-size: 1rem; }
+@media (min-width: 800px) {
+  .offer--right {
+    text-align: left;
+    display: inline-block;
+    width: 70%; } }
 
 .page--site-footer {
   margin: 1rem 0 0;

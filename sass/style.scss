@@ -42,7 +42,7 @@ body {
   }
   a { 
     display:inline-block;
-    padding:0.5rem 1rem;
+    padding:0.5rem 2rem;
     font-size:1rem;
   }
   & ul[data-state=closed]{
@@ -84,6 +84,9 @@ body {
   clear:both;
   margin:1rem 0;
   font-size:2rem;
+  @include breakpoint(800){
+    font-size:2.5rem;
+  }
 }
 
 .page--site-subtitle {
@@ -94,11 +97,15 @@ body {
 
 
 .blurb--wrap {
-  margin:2rem auto;
+  margin:2rem auto 3rem;
   font-size:1.25rem;
-  max-width:500px;
+  max-width:700px;
+  p {
+    line-height:1.2;
+  }
   @include breakpoint(600){
    text-align:center;
+   font-size:1.5rem;
   }
 }
 /*COME UP WITH MORE SEMANTIC NAME*/
@@ -106,10 +113,10 @@ body {
   width:100%;
 }
 .cta--wrap {
-  margin:2rem auto;
+  margin:2rem auto 2rem;
   text-align:center;
   @include breakpoint(800){
-    padding:1rem 0;
+    padding:1.5rem 0 0;
     border-top:1px solid #000;
   }
 }
@@ -118,10 +125,10 @@ body {
   display:inline-block;
   vertical-align:top;
   h3 {
-    font-size:2rem;
+    font-size:1.5rem;
   }
   @include breakpoint(800){
-  margin:0 1rem 0 0;
+  margin:0 1.5rem 0 0;
   text-align:right;
     width:25%;
   }
@@ -132,7 +139,7 @@ body {
   
     @include breakpoint(800){
       float:left;
-      margin:0 01rem 0 1rem;
+      margin:0 1.5rem 0 1.5rem;
     }
   }
   h3 {
@@ -144,7 +151,7 @@ body {
     }
   }
   p {
-    margin:0.5rem 0;
+    margin:0 0 0.5rem;
   }
   @include breakpoint(800){
   text-align:left;
@@ -157,10 +164,11 @@ body {
 
 .cta--email-form {
   input[type=email]{
-    width:50%;
+    width:90%;
     height:2rem;
     @include breakpoint(800){
       float:left;
+    width:50%;
     }
   }
   label {
@@ -171,13 +179,14 @@ body {
 
   button {
     padding:0.4rem 0.4rem;
-  
+    width:90%; 
     background:none;
     box-shadow:none;
     border:1px solid #000;
     font-size:1rem;
     @include breakpoint(800){
       float:left;
+      width:25%;
     }
 
   }
@@ -191,6 +200,65 @@ body {
   font-size:1.25rem;
   font-weight:bold;
 }
+
+
+
+
+.offer-wrap {
+  img {
+    max-width:100%;
+  }
+}
+
+.offer--left {
+  display:inline-block;
+  vertical-align:top;
+  h3 {
+    font-size:1.5rem;
+  }
+  @include breakpoint(800){
+  margin:0 1.5rem 0 0;
+  text-align:right;
+    width:25%;
+  }
+}
+
+.offer--right {
+  img {
+    border-radius:50%;
+  
+    @include breakpoint(800){
+      float:left;
+      margin:0 1.5rem 0 1.5rem;
+    }
+  }
+  h3 {
+    font-size:1.25rem;
+    font-weight:bold;
+    @include breakpoint(800){
+      display:inline-block;
+      margin:0 0 1rem;
+    
+    }
+  }
+  p {
+    margin:0 0 0.5rem;
+  }
+  button {
+    font-size:1rem;
+  }
+  @include breakpoint(800){
+  text-align:left;
+    display:inline-block;
+    
+    width:70%;
+  }
+}
+
+
+
+
+
 
 .page--site-footer {
   margin:1rem 0 0;
