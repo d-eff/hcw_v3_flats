@@ -201,7 +201,7 @@ a.page--main-nav-helper{
     background:none;
     box-shadow:none;
     border:1px solid #000;
-    font-size:1rem;
+    font-size:0.8rem;
     @include breakpoint(800){
       float:left;
       width:25%;
@@ -211,7 +211,7 @@ a.page--main-nav-helper{
 }
 
 .homepage--content-wrap {
-  margin: 1.5rem 0;
+  margin: 3rem 0;
 }
 
 .homepage--content-title {
@@ -239,14 +239,7 @@ a.page--main-nav-helper{
 }
 
 .offer--right {
-  img {
-    border-radius:50%;
   
-    @include breakpoint(800){
-      float:left;
-      margin:0 1.5rem 0 1.5rem;
-    }
-  }
   h3 {
     font-size:1.25rem;
     @include breakpoint(800){
@@ -262,10 +255,11 @@ a.page--main-nav-helper{
     font-size:1rem;
   }
   @include breakpoint(800){
-  text-align:left;
     display:inline-block;
-    
     width:70%;
+    padding:2rem 0 0;
+    text-align:left;
+    
   }
 }
 

@@ -49,7 +49,6 @@ var helper = document.querySelector('.page--main-nav-helper'),
     } else {
       if(currState !== 'fixed'){
         nav.setAttribute('data-position', 'fixed');
-        console.log(window.innerWidth);
         if(window.innerWidth >= 800){
           header.style.margin = "0 0 120px 0";
         

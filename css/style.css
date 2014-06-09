@@ -193,14 +193,14 @@ a.page--main-nav-helper {
   background: none;
   box-shadow: none;
   border: 1px solid #000;
-  font-size: 1rem; }
+  font-size: 0.8rem; }
   @media (min-width: 800px) {
     .cta--email-form button {
       float: left;
       width: 25%; } }
 
 .homepage--content-wrap {
-  margin: 1.5rem 0; }
+  margin: 3rem 0; }
 
 .homepage--content-title {
   font-size: 1.25rem;
@@ -218,12 +218,6 @@ a.page--main-nav-helper {
       text-align: right;
       width: 25%; } }
 
-.offer--right img {
-  border-radius: 50%; }
-  @media (min-width: 800px) {
-    .offer--right img {
-      float: left;
-      margin: 0 1.5rem 0 1.5rem; } }
 .offer--right h3 {
   font-size: 1.25rem; }
   @media (min-width: 800px) {
@@ -236,9 +230,10 @@ a.page--main-nav-helper {
   font-size: 1rem; }
 @media (min-width: 800px) {
   .offer--right {
-    text-align: left;
     display: inline-block;
-    width: 70%; } }
+    width: 70%;
+    padding: 2rem 0 0;
+    text-align: left; } }
 
 .page--site-footer {
   margin: 1rem 0 0;
