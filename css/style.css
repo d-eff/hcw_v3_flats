@@ -47,6 +47,7 @@ body {
   font-weight: normal; }
 
 .page--content-wrap {
+  position: relative;
   background-color: white;
   max-width: 1024px;
   padding: 1rem 0.8rem;
@@ -56,52 +57,56 @@ body {
       padding: 1rem 2rem; } }
 
 .page--main-nav {
-  position: absolute;
   top: 0;
-  margin: 0 0 1rem;
+  left: 0;
   width: 100%;
+  height: 40px;
   background-color: white;
   text-align: center;
   overflow: hidden;
-  -webkit-transition: 1s-webkit-transform linear; }
-  .page--main-nav ul {
-    -webkit-transition: 1s height linear; }
+  -webkit-transition: 0.2s height linear; }
   .page--main-nav li {
     list-style: none; }
   .page--main-nav a {
     display: inline-block;
+    width: 100%;
     padding: 0.5rem 2rem;
     font-size: 1rem; }
-  .page--main-nav[data-state=normal] {
-    position: absolute; }
-  .page--main-nav[data-state=fixed] {
+  .page--main-nav[data-position=fixed] {
     position: fixed; }
-  .page--main-nav ul[data-state=closed] {
-    height: 0; }
-  .page--main-nav ul[data-state=open] {
-    height: initial; }
+  .page--main-nav[data-position=normal] {
+    position: absolute; }
+  .page--main-nav[data-state=closed] {
+    height: 40px; }
+  .page--main-nav[data-state=open] {
+    height: 250px; }
+  .page--main-nav[data-state=open] .page--main-nav-helper:before {
+    content: "X"; }
+  .page--main-nav[data-state=closed] .page--main-nav-helper:before {
+    content: "MENU"; }
   @media (min-width: 800px) {
-    .page--main-nav[data-state=normal] {
+    .page--main-nav[data-state=closed], .page--main-nav[data-statr=open] {
+      height: initial; }
+    .page--main-nav[data-position=normal] {
       position: relative; }
     .page--main-nav li {
       display: inline;
       font-size: 0px; }
+    .page--main-nav a {
+      width: initial; }
     .page--main-nav ul li:first-child {
-      display: none; }
-    .page--main-nav ul[data-state=closed] {
-      height: inherit; } }
+      display: none; } }
+
+a.page--main-nav-helper {
+  text-align: right;
+  font-size: 1rem;
+  font-weight: bold; }
+  @media (min-width: 800px) {
+    a.page--main-nav-helper {
+      display: none; } }
 
 .page--site-header {
   text-align: center; }
-
-.page--burger {
-  display: block;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  text-align: right; }
-  @media (min-width: 800px) {
-    .page--burger {
-      display: none; } }
 
 .page--site-name {
   clear: both;

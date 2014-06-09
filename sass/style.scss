@@ -17,6 +17,7 @@ body {
 }
 
 .page--content-wrap {
+  position:relative;
   background-color:white;
   max-width:1024px;
   padding:1rem 0.8rem;
@@ -27,66 +28,74 @@ body {
 }
 
 .page--main-nav {
-  position:absolute;
   top:0;
-  margin:0 0 1rem;
+  left:0;
   width:100%;
+  height:40px;
   background-color:white;
   text-align:center;
   overflow:hidden;
-  -webkit-transition: 1s -webkit-transform linear;
-  ul {
-    -webkit-transition:1s height linear;
-  }
+  -webkit-transition: 0.2s height linear;
   li {
     list-style:none;
   }
   a { 
     display:inline-block;
+    width:100%;
     padding:0.5rem 2rem;
     font-size:1rem;
   }
-  &[data-state=normal]{
-    position:absolute;
-  }
-  &[data-state=fixed]{
+  
+  &[data-position=fixed]{
     position:fixed;
   }
-  & ul[data-state=closed]{
-    height:0;
+  &[data-position=normal]{
+    position:absolute;
   }
-  & ul[data-state=open]{
-    height:initial;
+  &[data-state=closed]{
+    height:40px;
   }
+  &[data-state=open]{
+    height:250px;
+  }
+  &[data-state=open] .page--main-nav-helper:before {
+    content:"X";
+  }
+  &[data-state=closed] .page--main-nav-helper:before {
+    content:"MENU";
+  }
+
   @include breakpoint(800){
-    &[data-state=normal]{
+    &[data-state=closed], &[data-statr=open]{
+      height:initial;    
+    }
+    &[data-position=normal]{
       position:relative;
     }
     li{
       display:inline;
       font-size:0px;
     }
+    a {
+      width:initial;
+    }
     ul li:first-child {
       display:none;
     }
-    & ul[data-state=closed]{
-      height:inherit;
-    }
   }
 }
-
-.page--site-header {
-  text-align:center;
-}
-
-.page--burger {
-  display:block;
-  font-size:1.5rem;
-  text-transform:uppercase;
+a.page--main-nav-helper{
   text-align:right;
+  font-size:1rem;
+  font-weight:bold;
   @include breakpoint(800){
     display:none;
   }
+}
+
+
+.page--site-header {
+  text-align:center;
 }
 
 .page--site-name {
