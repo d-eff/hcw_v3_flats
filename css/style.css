@@ -79,7 +79,7 @@ body {
   .page--main-nav[data-state=closed] {
     height: 40px; }
   .page--main-nav[data-state=open] {
-    height: 250px; }
+    height: 220px; }
   .page--main-nav[data-state=open] .page--main-nav-helper:before {
     content: "X"; }
   .page--main-nav[data-state=closed] .page--main-nav-helper:before {

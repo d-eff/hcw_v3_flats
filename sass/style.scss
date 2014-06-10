@@ -39,13 +39,13 @@ body {
   li {
     list-style:none;
   }
-  a { 
+  a {
     display:inline-block;
     width:100%;
     padding:0.5rem 2rem;
     font-size:1rem;
   }
-  
+
   &[data-position=fixed]{
     position:fixed;
   }
@@ -56,7 +56,7 @@ body {
     height:40px;
   }
   &[data-state=open]{
-    height:250px;
+    height:220px;
   }
   &[data-state=open] .page--main-nav-helper:before {
     content:"X";
@@ -67,7 +67,7 @@ body {
 
   @include breakpoint(800){
     &[data-state=closed], &[data-statr=open]{
-      height:initial;    
+      height:initial;
     }
     &[data-position=normal]{
       position:relative;
@@ -154,7 +154,7 @@ a.page--main-nav-helper{
 .cta--right {
   img {
     border-radius:50%;
-  
+
     @include breakpoint(800){
       float:left;
       margin:0 1.5rem 0 1.5rem;
@@ -165,7 +165,7 @@ a.page--main-nav-helper{
     @include breakpoint(800){
       display:inline-block;
       margin:0 0 1rem;
-    
+
     }
   }
   p {
@@ -174,7 +174,7 @@ a.page--main-nav-helper{
   @include breakpoint(800){
   text-align:left;
     display:inline-block;
-    
+
     border-left:1px solid #000;
     width:70%;
   }
@@ -197,7 +197,7 @@ a.page--main-nav-helper{
 
   button {
     padding:0.4rem 0.4rem;
-    width:90%; 
+    width:90%;
     background:none;
     box-shadow:none;
     border:1px solid #000;
@@ -239,13 +239,13 @@ a.page--main-nav-helper{
 }
 
 .offer--right {
-  
+
   h3 {
     font-size:1.25rem;
     @include breakpoint(800){
       display:inline-block;
       margin:0 0 1rem;
-    
+
     }
   }
   p {
@@ -259,7 +259,7 @@ a.page--main-nav-helper{
     width:70%;
     padding:2rem 0 0;
     text-align:left;
-    
+
   }
 }
 
