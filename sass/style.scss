@@ -44,6 +44,9 @@ body {
     width:100%;
     padding:0.5rem 2rem;
     font-size:1rem;
+    .active {
+      color:blue;
+    }
   }
 
   &[data-position=fixed]{
@@ -56,7 +59,7 @@ body {
     height:40px;
   }
   &[data-state=open]{
-    height:220px;
+    height:250px;
   }
   &[data-state=open] .page--main-nav-helper:before {
     content:"X";
@@ -78,9 +81,6 @@ body {
     }
     a {
       width:initial;
-    }
-    ul li:first-child {
-      display:none;
     }
   }
 }

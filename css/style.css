@@ -72,6 +72,8 @@ body {
     width: 100%;
     padding: 0.5rem 2rem;
     font-size: 1rem; }
+    .page--main-nav a .active {
+      color: blue; }
   .page--main-nav[data-position=fixed] {
     position: fixed; }
   .page--main-nav[data-position=normal] {
@@ -79,7 +81,7 @@ body {
   .page--main-nav[data-state=closed] {
     height: 40px; }
   .page--main-nav[data-state=open] {
-    height: 220px; }
+    height: 250px; }
   .page--main-nav[data-state=open] .page--main-nav-helper:before {
     content: "X"; }
   .page--main-nav[data-state=closed] .page--main-nav-helper:before {
@@ -93,9 +95,7 @@ body {
       display: inline;
       font-size: 0px; }
     .page--main-nav a {
-      width: initial; }
-    .page--main-nav ul li:first-child {
-      display: none; } }
+      width: initial; } }
 
 a.page--main-nav-helper {
   text-align: right;
