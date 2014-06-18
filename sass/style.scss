@@ -35,15 +35,34 @@ body {
   background-color:white;
   text-align:center;
   overflow:hidden;
-@include vendor-dprefix(transition, 0.2s, transform, linear);
+  @include vendor-dprefix(transition, 0.2s, transform, linear);
+  ul {
+    @include vendor-prefix(transition, 0.3s max-height ease-out);
+    background-color:white;
+    &[data-state=closed]{
+      max-height:0px;
+    }
+    &[data-state=open]{
+      max-height:1200px;
+    }
+    @include breakpoint(800){
+      &[data-state=closed], &[data-state=open]{
+        max-height:initial;
+      }
+    }
+  }
   li {
     list-style:none;
+    position:relative;
   }
   a {
     display:inline-block;
     width:100%;
     padding:0.5rem 2rem;
     font-size:1rem;
+  }
+  a:hover {
+    background-color:palegoldenrod;
   }
   .page--main-nav-helper{
     text-align:right;
@@ -64,33 +83,13 @@ body {
   &[data-position=normal]{
     position:absolute;
   }
-  ul {
-    @include vendor-prefix(transition, 0.2s height linear);
-    &[data-state=closed]{
-      height:0px;
-    }
-    &[data-state=open]{
-      height:200px;
-    }
-    &[data-state=open] ~ .page--main-nav-helper:before {
-      content:"X";
-    }
-    &[data-state=closed] ~ .page--main-nav-helper:before {
-      content:"MENU";
-    }
-  }
   @include breakpoint(800){
-    ul {
-      &[data-state=closed], &[data-state=open]{
-        height:initial;
-      }
-    }
+    overflow:visible;
     &[data-position=normal]{
       position:relative;
     }
     li{
       display:inline;
-      font-size:0px;
     }
     a {
       width:initial;
@@ -98,6 +97,38 @@ body {
   }
 }
 
+.page--main-nav-parent-menu {
+  position:relative;
+  &[data-state=open] ~ .page--main-nav-helper:before {
+    content:"X";
+  }
+  &[data-state=closed] ~ .page--main-nav-helper:before {
+    content:"MENU";
+  }
+}
+
+.page--main-nav-child-menu {
+  overflow:hidden;
+  @include breakpoint(800){
+    position:absolute; 
+    z-index:10;
+    text-align:left;
+    height:0px;
+    a {
+      width:100%;
+      padding:0.5rem 1rem;
+    } 
+  }
+}
+a:hover + .page--main-nav-child-menu, .page--main-nav-child-menu:hover {
+  @include breakpoint(800){
+    height:initial;
+    &:last-child {
+      padding:0 0 1rem 0;
+    }
+
+  }
+}
 
 .page--site-header {
   text-align:center;

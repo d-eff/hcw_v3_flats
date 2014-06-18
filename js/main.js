@@ -5,7 +5,8 @@ var helper = document.querySelector('.page--main-nav-helper'),
     currentHeight = window.pageYOffset,
     header = document.querySelector('.page--site-header'),
     headerBottom = header.offsetTop + header.offsetHeight,
-    navBody = document.querySelector('.page--main-nav');
+    navBody = document.querySelector('.page--main-nav'),
+    parentLinks = document.querySelectorAll('.page--main-nav-parent-link'); 
 
   window.addEventListener('scroll', function(){
     scrollUlate(navWrap, currentHeight, header, headerBottom);
@@ -14,14 +15,26 @@ var helper = document.querySelector('.page--main-nav-helper'),
 
   helper.addEventListener('click', function(e){
     e.preventDefault();
-    toggleState('.page--main-nav ul', 'state', 'open', 'closed');
+    var navUl = document.querySelector('.page--main-nav ul');
+    toggleState(navUl, 'state', 'open', 'closed');
   });
+  
+  for(var x = 0; x < parentLinks.length; ++x){
+    (function(x){
+      parentLinks[x].addEventListener('click', function(e){
+        if(window.innerWidth < 800){
+          e.preventDefault();
+          toggleState(e.target.nextElementSibling, 'state', 'open', 'closed');
+        }
+      });
+    })(x);
+  }
 }
 
 
-function toggleState(item, attr, stateOne, stateTwo){
-  var ele = document.querySelector(item),
-      dattr = 'data-' + attr;
+
+function toggleState(ele, attr, stateOne, stateTwo){
+  var dattr = 'data-' + attr;
   ele.setAttribute(dattr, ele.getAttribute(dattr) === stateOne ? stateTwo : stateOne);
 }
 
