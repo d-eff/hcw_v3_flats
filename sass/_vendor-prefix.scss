@@ -1,0 +1,13 @@
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+@mixin vendor-dprefix($name, $arg1, $arg2, $arg3) {
+  -webkit-#{$name}: #{$arg1} -webkit-#{$arg2} #{$arg3};
+  -moz-#{$name}: #{$arg1} -moz-#{$arg2} #{$arg3};
+  -o-#{$name}: #{$arg1} -o-#{$arg2} #{$arg3};
+  #{$name}: #{$arg1} #{$arg2} #{$arg3};
+}
