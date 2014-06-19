@@ -1,7 +1,11 @@
 @mixin breakpoint($point){
+
     @if $point == full {
         @media (min-width:1024px) { @content; }
-    }
+  }
+  @if $point == 900 {
+    @media (min-width:900px) { @content; }
+}
     @if $point == 800 {
         @media (min-width:800px) { @content; }
     }

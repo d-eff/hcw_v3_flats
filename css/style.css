@@ -87,8 +87,11 @@ body {
   .page--main-nav a {
     display: inline-block;
     width: 100%;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1.5rem;
     font-size: 1rem; }
+    @media (min-width: 900px) {
+      .page--main-nav a {
+        padding: 0.5rem 2rem; } }
   .page--main-nav a:hover {
     background-color: palegoldenrod; }
   .page--main-nav .page--main-nav-helper {
@@ -269,6 +272,38 @@ body {
     padding: 2rem 0 0;
     text-align: left; } }
 
+.base--content-wrap {
+  margin: 1rem auto 5rem;
+  padding: 0 0.5rem;
+  overflow: hidden; }
+  @media (min-width: 800px) {
+    .base--content-wrap {
+      max-width: 800px; } }
+
+.base--content-title {
+  margin: 0 0 0.8rem;
+  font-size: 1.5rem;
+  font-weight: bold; }
+  @media (min-width: 800px) {
+    .base--content-title {
+      width: 30%;
+      float: left;
+      padding: 0rem 3rem 3rem 0;
+      margin: 0 -100% 0 0; } }
+
+.base--content-subhead {
+  margin: 0 0 0.8rem;
+  font-size: 1.2rem; }
+
+@media (min-width: 800px) {
+  .base--content-rcol {
+    width: 70%;
+    float: right; } }
+
+.base--content-body {
+  margin: 0rem 0 1.5rem;
+  line-height: 1.2; }
+
 .page--site-footer {
   margin: 1rem 0 0;
   text-align: center;
@@ -276,3 +311,11 @@ body {
 
 .page--site-footer-img {
   max-width: 2rem; }
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }

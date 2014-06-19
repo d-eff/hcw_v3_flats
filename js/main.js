@@ -6,11 +6,12 @@ var helper = document.querySelector('.page--main-nav-helper'),
     header = document.querySelector('.page--site-header'),
     headerBottom = header.offsetTop + header.offsetHeight,
     navBody = document.querySelector('.page--main-nav'),
-    parentLinks = document.querySelectorAll('.page--main-nav-parent-link'); 
+    parentLinks = document.querySelectorAll('.page--main-nav-parent-link');
 
   window.addEventListener('scroll', function(){
     scrollUlate(navWrap, currentHeight, header, headerBottom);
     currentHeight = window.pageYOffset;
+    console.log("cur updated." + currentHeight);
   });
 
   helper.addEventListener('click', function(e){
@@ -18,7 +19,7 @@ var helper = document.querySelector('.page--main-nav-helper'),
     var navUl = document.querySelector('.page--main-nav ul');
     toggleState(navUl, 'state', 'open', 'closed');
   });
-  
+
   for(var x = 0; x < parentLinks.length; ++x){
     (function(x){
       parentLinks[x].addEventListener('click', function(e){
@@ -53,6 +54,8 @@ function toggleState(ele, attr, stateOne, stateTwo){
 
 function scrollUlate(nav, currentHeight, header, headerBottom){
   var currState = nav.getAttribute('data-position');
+  console.log("wind " + window.scrollY);
+  console.log("head " + headerBottom);
   if(currentHeight <= headerBottom){
     if(currState !== 'normal'){
       nav.setAttribute('data-position', 'normal');
@@ -62,7 +65,7 @@ function scrollUlate(nav, currentHeight, header, headerBottom){
     if(currState !== 'fixed'){
       nav.setAttribute('data-position', 'fixed');
       if(window.innerWidth >= 800){
-        header.style.margin = '0 0 120px 0';
+        header.style.margin = '0 0 70px 0';
 
       }
     }

@@ -58,8 +58,11 @@ body {
   a {
     display:inline-block;
     width:100%;
-    padding:0.5rem 2rem;
+    padding:0.5rem 1.5rem;
     font-size:1rem;
+    @include breakpoint(900){
+      padding:0.5rem 2rem;
+    }
   }
   a:hover {
     background-color:palegoldenrod;
@@ -110,14 +113,14 @@ body {
 .page--main-nav-child-menu {
   overflow:hidden;
   @include breakpoint(800){
-    position:absolute; 
+    position:absolute;
     z-index:10;
     text-align:left;
     height:0px;
     a {
       width:100%;
       padding:0.5rem 1rem;
-    } 
+    }
   }
 }
 a:hover + .page--main-nav-child-menu, .page--main-nav-child-menu:hover {
@@ -297,8 +300,43 @@ a:hover + .page--main-nav-child-menu, .page--main-nav-child-menu:hover {
   }
 }
 
+////////////////////////////////////////
+//BASE CONTENT
+////////////////////////////////////////
+.base--content-wrap {
+  margin:1rem auto 5rem;
+  padding:0 0.5rem;
+  overflow:hidden;
+  @include breakpoint(800){
+    max-width:800px;
+  }
+}
 
-
+.base--content-title {
+  margin:0 0 0.8rem;
+  font-size:1.5rem;
+  font-weight:bold;
+  @include breakpoint(800){
+    width:30%;
+    float:left;
+    padding:0rem 3rem 3rem 0;
+    margin:0 -100% 0 0;
+  }
+}
+.base--content-subhead {
+    margin:0 0 0.8rem;
+    font-size:1.2rem;
+}
+.base--content-rcol {
+  @include breakpoint(800){
+    width:70%;
+    float:right;
+  }
+}
+.base--content-body {
+  margin:0rem 0 1.5rem;
+  line-height:1.2;
+}
 
 
 
@@ -312,3 +350,11 @@ a:hover + .page--main-nav-child-menu, .page--main-nav-child-menu:hover {
   max-width:2rem;
 }
 
+.clearfix:after {
+     visibility: hidden;
+        display: block;
+           font-size: 0;
+              content: " ";
+                   clear: both;
+                        height: 0;
+                             }
