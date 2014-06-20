@@ -34,6 +34,7 @@ body {
   width:100%;
   background-color:white;
   text-align:center;
+  z-index:999;
   overflow:hidden;
   @include vendor-dprefix(transition, 0.2s, transform, linear);
   ul {
@@ -220,7 +221,7 @@ a:hover + .page--main-nav-child-menu, .page--main-nav-child-menu:hover {
 .cta--email-form {
   input[type=email]{
     width:90%;
-    height:2rem;
+    height:30px;
     @include breakpoint(800){
       float:left;
     width:50%;
@@ -233,14 +234,16 @@ a:hover + .page--main-nav-child-menu, .page--main-nav-child-menu:hover {
   }
 
   button {
-    padding:0.4rem 0.4rem;
     width:90%;
+    height:30px;
     background:none;
     box-shadow:none;
     border:1px solid #000;
     font-size:0.8rem;
+    margin:0.5rem 0 0;
     @include breakpoint(800){
-      float:left;
+      float:right;
+      margin:0;
       width:25%;
     }
 
@@ -338,23 +341,120 @@ a:hover + .page--main-nav-child-menu, .page--main-nav-child-menu:hover {
   line-height:1.2;
 }
 
-
+////////////////////////
+//Program Boxes
+///////////////////////
+.program--wrap {
+  float:left;
+  padding:0 0 25px 0;
+  width:100%;
+  @include breakpoint(600){
+    max-width:46%;
+    margin:0rem 0.5rem;
+  }
+  @include breakpoint(800){
+    max-width:30%;
+    margin:4rem 0.5rem;
+  }
+}
+.program--icon {
+  border-radius:50%;
+  margin: 0 0 -10% 50%;
+  -webkit-transform: translateX(-50%);
+  @include breakpoint(600){
+    margin: 0 0 -15% 50%;
+  }
+}
+.program--content-box {
+  border:1px solid black;
+  height:220px;
+  padding:1rem;
+}
+.program--content-headline {
+  font-size:0.9rem;
+  margin:2rem 0 1rem;
+}
+.program--content {
+  font-size:0.8rem;
+}
+.program--button {
+  background: white;
+  border:1px solid black;
+  display:inline-block;
+  padding:0.3rem 2rem;
+  margin:-3% 0 0 50%;
+  -webkit-transform: translateX(-50%);
+  @include breakpoint(900){
+    margin:-7% 0 0 50%;
+  }
+}
 
 .page--site-footer {
-  margin:1rem 0 0;
   text-align:center;
-  font-size:1rem;
+  border-top:1px solid black;
 }
-
+.page--site-footer-content-wrap {
+  max-width:500px;
+  margin:0 auto;
+  padding:1rem 0;
+  @include breakpoint(800){
+    padding:1.5rem 0 0;
+  }
+}
+.page--site-footer-headline {
+  margin:1.5rem 0 1rem;
+  @include breakpoint(600){
+    margin:0;
+    width:60%;
+    float:right;
+    text-align:left;
+  }
+}
 .page--site-footer-img {
-  max-width:2rem;
+  margin: 0 auto;
+  display:block;
+  border-radius:50%;
+  @include breakpoint(600){
+    width:22%;
+    float:left;
+    margin: 0 44px;
+  }
 }
-
-.clearfix:after {
-     visibility: hidden;
-        display: block;
-           font-size: 0;
-              content: " ";
-                   clear: both;
-                        height: 0;
-                             }
+.page--site-footer-email {
+  font-size:0.9rem;
+  margin:1rem 0;
+  display:inline-block;
+  @include breakpoint(600){
+    display:inline-block;
+    text-align:left;
+    float:right;
+    width:60%;
+  }
+}
+.page--site-footer-social {
+  @include breakpoint(600){
+    width:60%;
+    float:right;
+    text-align:left;
+    
+  }
+  @include breakpoint(800){
+    width:19.5%;
+    float:left;
+    margin:0 0 1rem;
+    img {
+      width:28px;
+    }
+  }
+}
+.page--permafooter-wrap {
+  border-top:1px solid black;
+  clear:both;
+  padding:0.6rem 0 0;
+  margin:0.5rem 0 0;
+}
+.page--permafooter-content {
+  font-size:0.6rem;
+  margin:0.6rem auto;
+  max-width:600px;
+}
